@@ -1,15 +1,22 @@
-import { AppContext } from "../../Context";
+import { AppContext } from "../../Context/Context";
 import { useContext, useEffect, useState } from "react";
 import "./QuizSecond.css";
 import Button from "../../components/Button/button";
 import { useNavigate } from "react-router-dom";
+import { IFilmData } from "../../Context/ContextModules";
+
+interface IQuizSecond {
+  setHeaderProgresHandler: (percent: number) => void;
+  setFilmDataHandler: (data: IFilmData | null) => void;
+  setCurrentPageHandler: (id: number) => void;
+}
 
 const QuizSecond = () => {
   const {
     setHeaderProgresHandler,
     setFilmDataHandler,
     setCurrentPageHandler,
-  }: any = useContext(AppContext);
+  }: IQuizSecond = useContext(AppContext);
   const [inputValue, setInputValue] = useState("");
   const [isInputValidate, setInputValidate] = useState(false);
   const [isTouchableInput, setTouchableInput] = useState(false);

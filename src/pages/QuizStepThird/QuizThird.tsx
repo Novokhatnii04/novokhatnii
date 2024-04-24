@@ -1,23 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AppContext } from "../../Context";
+import { AppContext } from "../../Context/Context";
 import "./QuizThird.css";
 import Button from "../../components/Button/button";
 import NotFoundPng from "../../assets/Images/QuizStepThird/notfound.png";
-
-interface IFilm {
-  Poster: string;
-  Title: string;
-  Type: string;
-  Year: string;
-  imdbID: string;
-}
-
-export interface IFilmData {
-  Response: string;
-  Search: IFilm[];
-  totalResults: string;
-}
+import { IFilmData , IFilm } from '../../Context/ContextModules'
 
 const QuizThird = () => {
   const {

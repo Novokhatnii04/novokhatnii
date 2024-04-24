@@ -1,9 +1,16 @@
-import React, { FC, useContext, useEffect } from "react";
+import { FC, useContext, useEffect } from "react";
 import "./QuizFirst.css";
 import { QuizFirstButtons } from "./QuizFirstBtns";
 import Button from "../../components/Button/button";
-import { AppContext } from "../../Context";
-import { Link, useNavigate } from "react-router-dom";
+import { AppContext } from "../../Context/Context";
+import { useNavigate } from "react-router-dom";
+
+interface IQuizFirst {
+  activeBtn: number | null;
+  setCurrentIdBtnHandler: (id: number) => void;
+  setHeaderProgresHandler: (percent: number) => void;
+  setCurrentPageHandler: (id: number) => void;
+}
 
 const QuizStep1: FC = () => {
   const {
@@ -11,7 +18,7 @@ const QuizStep1: FC = () => {
     setCurrentIdBtnHandler,
     setHeaderProgresHandler,
     setCurrentPageHandler,
-  }: any = useContext(AppContext);
+  }: IQuizFirst = useContext(AppContext);
   const navigate = useNavigate();
 
   const isActiveButton = (index: number): boolean => {
@@ -28,7 +35,7 @@ const QuizStep1: FC = () => {
 
   useEffect(() => {
     setCurrentPageHandler(1);
-
+    
     console.log(activeBtn)
     if (activeBtn === null) {
       setHeaderProgresHandler(0);

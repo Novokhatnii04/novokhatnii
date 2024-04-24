@@ -1,16 +1,6 @@
-import React, { createContext, useState } from "react";
-import { IFilmData } from "./pages/QuizStepThird/QuizThird";
+import { createContext, useState } from "react";
 
-interface AppContextType {
-  activeBtn: number | null;
-  setCurrentIdBtnHandler: (id: number) => void;
-  headerProgress: number | null;
-  setHeaderProgresHandler: (percent: number) => void;
-  filmsData: IFilmData | null;
-  setFilmDataHandler: (data: IFilmData | null) => void;
-  page: number;
-  setCurrentPageHandler: (id: number) => void;
-}
+import { IFilmData, AppContextType } from "./ContextModules";
 
 export const AppContext = createContext<AppContextType>({
   activeBtn: null,
@@ -23,16 +13,14 @@ export const AppContext = createContext<AppContextType>({
   setCurrentPageHandler: () => {},
 });
 
-const Context = (props: any) => {
-
+const Context = (props: React.PropsWithChildren) => {
   // Active button
-  const storedActiveButton = localStorage.getItem("activeButton");
-  const initialActiveBtn = storedActiveButton
-    ? +storedActiveButton
-    : null;
+  const storedActiveButton = JSON.parse(localStorage.getItem("activeButton") as string);
+  const initialActiveBtn =
+    typeof storedActiveButton === "number" ? +storedActiveButton : null;
   const [activeBtn, setActiveBtn] = useState<number | null>(initialActiveBtn);
 
-  const setCurrentIdBtnHandler = (id: number) => {
+  const setCurrentIdBtnHandler = (id: number | null) => {
     try {
       setActiveBtn(id);
       localStorage.setItem("activeButton", JSON.stringify(id));

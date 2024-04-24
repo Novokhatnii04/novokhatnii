@@ -1,11 +1,17 @@
 import React, { FC, useContext, useEffect } from "react";
 import "./Header.css";
 import HeaderCloudsPng from "../../assets/Images/Header/HeaderCloud.png";
-import { AppContext } from "../../Context";
+import { AppContext } from "../../Context/Context";
 import { useNavigate } from "react-router-dom";
 
+interface IHeeader {
+  setCurrentIdBtnHandler: (id: number | null) => void;
+  headerProgress: number | null;
+  page: number;
+}
+
 const Header: FC = () => {
-  const { headerProgress, page, setCurrentIdBtnHandler }: any =
+  const { headerProgress, page, setCurrentIdBtnHandler }: IHeeader =
     useContext(AppContext);
   const navigate = useNavigate();
 
