@@ -27,11 +27,12 @@ const QuizStep1: FC = () => {
   };
 
   useEffect(() => {
-    setHeaderProgresHandler(33);
     setCurrentPageHandler(1);
 
     if (activeBtn === null) {
       setHeaderProgresHandler(0);
+    } else {
+      setHeaderProgresHandler(33);
     }
   }, [activeBtn]);
 
