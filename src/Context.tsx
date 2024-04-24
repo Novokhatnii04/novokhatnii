@@ -4,7 +4,7 @@ import { IFilmData } from "./pages/QuizStepThird/QuizThird";
 interface AppContextType {
   activeBtn: number | null;
   setCurrentIdBtnHandler: (id: number) => void;
-  headerProgress: number;
+  headerProgress: number | null;
   setHeaderProgresHandler: (percent: number) => void;
   filmsData: IFilmData | null;
   setFilmDataHandler: (data: IFilmData | null) => void;
@@ -15,7 +15,7 @@ interface AppContextType {
 export const AppContext = createContext<AppContextType>({
   activeBtn: null,
   setCurrentIdBtnHandler: () => {},
-  headerProgress: 30,
+  headerProgress: null,
   setHeaderProgresHandler: () => {},
   filmsData: null,
   setFilmDataHandler: () => {},
@@ -28,7 +28,7 @@ const Context = (props: any) => {
   // Active button
   const storedActiveButton = localStorage.getItem("activeButton");
   const initialActiveBtn = storedActiveButton
-    ? parseInt(storedActiveButton, 10)
+    ? +storedActiveButton
     : null;
   const [activeBtn, setActiveBtn] = useState<number | null>(initialActiveBtn);
 

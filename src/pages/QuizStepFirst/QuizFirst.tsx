@@ -29,6 +29,7 @@ const QuizStep1: FC = () => {
   useEffect(() => {
     setCurrentPageHandler(1);
 
+    console.log(activeBtn)
     if (activeBtn === null) {
       setHeaderProgresHandler(0);
     } else {
