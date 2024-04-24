@@ -1,0 +1,11 @@
+:root {
+  --max__width: 495px;
+}
+
+.global__wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}

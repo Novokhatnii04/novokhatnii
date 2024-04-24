@@ -1,0 +1,30 @@
+.button__content_active,
+.button__content_notactive {
+  background: rgba(64, 188, 163, 1);
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 1);
+  max-width: var(--max__width);
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+
+.button__content_active > h1,
+.button__content_notactive > h1 {
+  font-family: Noto Sans;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21.79px;
+  text-align: center;
+}
+
+.button__content_notactive {
+  opacity: 0.5;
+  cursor: no-drop;
+}

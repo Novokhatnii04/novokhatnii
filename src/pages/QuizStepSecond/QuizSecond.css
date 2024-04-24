@@ -1,0 +1,63 @@
+.quizsecond__wrapper {
+  width: 100%;
+  padding: 0px 6.1%;
+  max-width: 768px;
+}
+
+.quizsecond__content {
+  max-width: var(--max__width);
+  margin: 216px auto;
+}
+
+.quizsecond__title {
+  font-family: Noto Sans;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 30px;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.quizsecond__input {
+  width: 100%;
+  height: 64px;
+  border-radius: 8px;
+  border: 2px solid rgba(215, 220, 223, 1);
+  padding: 0 24px;
+  color: rgba(33, 33, 33, 1);
+  font-family: Noto Sans;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.quizsecond__input::placeholder {
+  font-family: Noto Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21.79px;
+  text-align: left;
+  color: rgba(33, 33, 33, 0.5);
+}
+
+.quizsecond__input:focus {
+  border: 2px solid rgba(64, 188, 163, 1);
+}
+
+.quizsecond__form {
+  margin-top: 40px;
+  position: relative;
+}
+
+.quizsecond__error {
+  color: rgba(220, 0, 0, 1);
+  font-family: Noto Sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+}
